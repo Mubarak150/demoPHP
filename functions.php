@@ -12,3 +12,21 @@ function dd($value)
 function urlIs($value) {
     return $_SERVER['REQUEST_URI'] === $value;
 }
+
+/////////////////// router functions ///////////
+function abort ($code = 404) {
+    http_response_code($code);
+    require "views/{$code}.php";
+    die();
+}
+
+
+
+function getToRoutes ($uri, $routes) {
+    if(array_key_exists($uri, $routes)) {
+        require $routes[$uri];
+    }
+    else {
+        abort ();
+    }
+}
