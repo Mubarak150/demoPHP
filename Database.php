@@ -2,10 +2,15 @@
 
 class Database {
     public $connection;
-    public function __construct() {
-        $dsn = "mysql:host=localhost;port=3306;dbname=Demo2;user=root;charset=utf8mb4";
+    public function __construct($config, $username='root', $password='') {
 
-        $this->connection = new PDO($dsn); 
+       
+        $dsn = 'mysql:' . http_build_query($config, '', ';'); 
+        //$dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};user=root;charset={$config['charset']}"; // need to be flexibalized
+
+        $this->connection = new PDO($dsn, $username, $password, [
+            PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
+        ]); 
     }
 
     public function query($query) {
