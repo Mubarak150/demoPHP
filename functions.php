@@ -14,7 +14,7 @@ function urlIs($value) {
 }
 
 ////////         /// router functions ///       ////////
-function abort ($code = 404) {
+function abort ($code = Response::PAGE_NOT_FOUND) {
     http_response_code($code);
     require "views/{$code}.php";
     die();
@@ -28,5 +28,11 @@ function getToRoutes ($uri, $routes) {
     }
     else {
         abort ();
+    }
+}
+
+function authorize ($condition, $status = Response::UNAUTHORIZED) {
+    if ($condition) {
+        abort ($status);
     }
 }
