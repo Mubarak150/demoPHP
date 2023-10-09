@@ -13,6 +13,9 @@
           <a class="text-gray-900 hover:underline hover:text-blue-700" href="/demoPHP/note?id= <?= $note['id'] ?>"><?= $note['body'] ?></a>  </li>
         <?php endforeach; ?>
       </h3>
+
+      <!-- form -->
+      <p class="mt-8 text-blue-900"><a  href="/demoPHP/notes/create">create</a></p>
     </div>
   </main>
 </div>
