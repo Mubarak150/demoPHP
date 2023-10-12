@@ -10,7 +10,7 @@
 
         <ul>
             <p class="text-gray-900 ">
-              <?= $note['body'] ?>
+              <?= htmlspecialchars($note['body']) ?>
             </p>
             <button class="mt-10 px-10 py-1 bg-blue-700 text-white opacity-80 hover:bg-blue-900"><a href="/demoPHP/notes">back</a></button>
         </ul>
