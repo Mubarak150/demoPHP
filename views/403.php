@@ -1,4 +1,4 @@
-<?php require("views/partials/head.php"); ?>
+<?php require base_path("views/partials/head.php"); ?>
 <body class="h-full">
 
 <div class="h-screen mx-auto w-screen text-center pt-56 bg-black">

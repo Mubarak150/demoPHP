@@ -1,8 +1,7 @@
 <?php
-$config = require('config.php');
-require('Validate.php');
+$config = require base_path('config.php');
+require base_path('Core/Validate.php');
 $db = new Database($config['database']);
-$title = 'New Note';
 $errors = [];
 
 if($_SERVER['REQUEST_METHOD']=== 'POST') {
@@ -19,4 +18,8 @@ if($_SERVER['REQUEST_METHOD']=== 'POST') {
     }
     
 }
-require "views/notes/create.view.php";
+
+view('notes/create.view.php', [
+    'title' => 'Create a Note',
+    'errors' => $errors
+]);
