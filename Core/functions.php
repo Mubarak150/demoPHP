@@ -16,15 +16,15 @@ function urlIs($value) {
 ////////         /// router functions ///       ////////
 function abort ($code = Response::PAGE_NOT_FOUND) {
     http_response_code($code);
-    require "views/{$code}.php";
+    require base_path("views/{$code}.php");
     die();
 }
-
+///////////////////////////
 
 
 function getToRoutes ($uri, $routes) {
     if(array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     }
     else {
         abort ();

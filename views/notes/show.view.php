@@ -12,8 +12,18 @@
             <p class="text-gray-900 ">
               <?= htmlspecialchars($note['body']) ?>
             </p>
-            <button class="mt-10 px-10 py-1 bg-blue-700 text-white opacity-80 hover:bg-blue-900"><a href="/demoPHP/notes">back</a></button>
-        </ul>
+
+        </ul>  
+        <div>
+           <button class="inline-block mt-10 px-10 py-1 bg-blue-700 text-white opacity-80 hover:bg-blue-900"><a href="/demoPHP/notes">back</a></button>
+            <form class='inline-block' method="POST">
+              <input type="hidden" name="id" value="<?= $note['id'] ?>">
+              <button class="inline-block mt-10 px-10 py-1 bg-red-400 text-white hover:bg-red-500">Delete</button>
+            </form>
+        </div>
+           
+            
+        
 
         
     </div>
