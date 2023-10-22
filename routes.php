@@ -1,21 +1,18 @@
 <?php
-$router->get('/demoPHP/about', 'controllers/about.php');
-$router->get('/demoPHP/', 'controllers/index.php');
-$router->get('/demoPHP/contact', 'controllers/contact.php');
 
+$router->get('/', 'controllers/index.php');
+$router->get('/about', 'controllers/about.php');
+$router->get('/contact', 'controllers/contact.php');
 
-$router->get('/demoPHP/notes', 'controllers/notes/index.php');
-$router->get('/demoPHP/notes/create', 'controllers/notes/create.php');
-$router->get('/demoPHP/note', 'controllers/notes/show.php');
-
-
-
-
+$router->get('/notes', 'controllers/notes/index.php');
+$router->get('/notes/create', 'controllers/notes/create.php');
+$router->get('/note', 'controllers/notes/show.php');
+// dd($router->routes); 
 // return [
-//     '/demoPHP/' => 'controllers/index.php',
-//     '/demoPHP/contact' => 'controllers/contact.php',
-//     '/demoPHP/notes' => 'controllers/notes/index.php',
-//     '/demoPHP/notes/create' => 'controllers/notes/create.php',
-//     '/demoPHP/note' => 'controllers/notes/show.php',
-//     '/demoPHP/about' => 'controllers/about.php'
+//     '/' => 'controllers/index.php',
+//     '/contact' => 'controllers/contact.php',
+//     '/notes' => 'controllers/notes/index.php',
+//     '/notes/create' => 'controllers/notes/create.php',
+//     '/note' => 'controllers/notes/show.php',
+//     '/about' => 'controllers/about.php'
 // ];

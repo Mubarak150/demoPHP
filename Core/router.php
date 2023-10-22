@@ -4,57 +4,50 @@ namespace Core;
 
 class Router {
     protected $routes = [];
+
+    public function add ($uri, $controller, $method) {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller'=>$controller,
+            'method'=>$method
+        ];
+    }
+
     public function get ($uri, $controller) {
-        $this -> routes [] = [
-            'url' => $uri,
-            'controller' => $controller,
-            'method' => "GET"
-        ];
+        $this->add($uri, $controller, 'GET');
+    } 
+
+    public function delete ($uri, $controller)  {
+        $this->add($uri, $controller, 'DELETE');
     }
 
-    public function post ($uri, $controller) {
-        $this -> routes [] = [
-            'url' => $uri,
-            'controller' => $controller,
-            'method' => "POST"
-        ];
+    public function patch ($uri, $controller)  {
+        $this->add($uri, $controller, 'PATCH');
     }
 
-    public function delete ($uri, $controller) {
-        $this -> routes [] = [
-            'url' => $uri,
-            'controller' => $controller,
-            'method' => "DELETE"
-        ];
+    public function put ($uri, $controller)  {
+        $this->add($uri, $controller, 'PUT');
     }
 
-    public function patch ($uri, $controller) {
-        $this -> routes [] = [
-            'url' => $uri,
-            'controller' => $controller,
-            'method' => "PATCH"
-        ];
+    public function post ($uri, $controller)  {
+        $this->add($uri, $controller, 'POST');
     }
 
-    public function put ($uri, $controller) {
-        $this -> routes [] = [
-            'url' => $uri,
-            'controller' => $controller,
-            'method' => "PUT"
-        ];
-    }
-
-    public function route($uri, $method) {
+    public function route ($uri, $method) {
         foreach ($this->routes as $route) {
-            if($route['url']===$uri && $route['method'] === strtoupper($method)) {
+            if($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 return require base_path($route['controller']);
-            }
-            else {
-                abort();
-            }
+            }    
         }
+        abort();
     }
 }
+
+
+
+// $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+// $routes = require base_path("routes.php");
+// getToRoutes ($uri, $routes);
 
 // // if(array_key_exists($uri, $routes)) {
 // //     require $routes[$uri];
@@ -62,3 +55,7 @@ class Router {
 // // else {
 // //     abort ();
 // // }   ///////////////////////////////shifted to function.php
+
+
+
+

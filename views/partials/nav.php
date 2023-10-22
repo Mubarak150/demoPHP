@@ -8,10 +8,10 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/demoPHP/" class="<?= urlIs ('/demoPHP/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-              <a href="about" class="<?= urlIs ('/demoPHP/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About Us</a>
-              <a href="/demoPHP/notes" class="<?= urlIs ('/demoPHP/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
-              <a href="contact" class="<?= urlIs ('/demoPHP/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contacts</a>
+              <a href="/" class="<?= urlIs ('/') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+              <a href="/about" class="<?= urlIs ('/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About Us</a>
+              <a href="/notes" class="<?= urlIs ('/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+              <a href="/contact" class="<?= urlIs ('/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contacts</a>
             </div> 
           </div>
         </div>

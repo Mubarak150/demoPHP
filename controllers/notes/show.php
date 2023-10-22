@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     // after deleting a note, re-direct to notes page and exit the condition. 
-    header('location:/demoPHP/notes');
+    header('location:/notes');
     exit();
     
 }
