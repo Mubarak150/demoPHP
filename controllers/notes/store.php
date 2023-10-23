@@ -1,8 +1,14 @@
 <?php
+// use Core\Database;
+// $config = require base_path('config.php');
+
+
+use Core\App;
 use Core\Database;
-$config = require base_path('config.php');
+
+$db = App::resolve(Database::class);
 require base_path('Core/Validate.php');
-$db = new Database($config['database']);
+// $db = new Database($config['database']);
 $errors = [];
 
     if (! Validate::string($_POST['body'], 1, 150)) { // min = 1, max = 150;  
