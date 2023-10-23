@@ -18,9 +18,11 @@
            <button class="inline-block mt-10 px-10 py-1 bg-blue-700 text-white opacity-80 hover:bg-blue-900"><a href="/notes">back</a></button>
           
            <form class='inline-block' method="POST">
-              <input type="hidden" name="_method" value="DELETE" >
+              <!-- <input type="hidden" name="_method" value="DELETE" > -->
+              <!-- <input type="hidden" name="_button_method" value="PATCH" > -->
               <input type="hidden" name="id" value="<?= $note['id'] ?>">
-              <button class="inline-block mt-10 px-10 py-1 bg-red-400 text-white hover:bg-red-500">Delete</button>
+              <!-- <button class="inline-block mt-10 px-10 py-1 bg-red-400 text-white hover:bg-red-500">Delete</button> -->
+              <a class="inline-block mt-10 px-10 py-1  text-gray-700 border border-current hover:text-white hover:bg-gray-500" href="/note/edit?id=<?= $note['id'] ?>">Update</a>
             </form>
         </div>
            

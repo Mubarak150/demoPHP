@@ -15,5 +15,8 @@ $router->post('/notes', 'controllers/notes/store.php');
 // Shows an indivial note, for a specific user. 
 $router->get('/note', 'controllers/notes/show.php');
 
+$router->get('/note/edit', 'controllers/notes/edit.php');
+$router->patch('/notes', 'controllers/notes/update.php');
+
 // DELETEs a note: Obviously!!!
 $router->delete('/note', 'controllers/notes/destroy.php');
